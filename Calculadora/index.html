@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDICalc</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759142365159298"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>CDI<span>calc</span></h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="info-section">
+            <h2>O que é CDI?</h2>
+            <p>O CDI é a taxa de juros dos empréstimos entre bancos. Ele influencia a rentabilidade de investimentos como CDBs, fundos de renda fixa e poupança. Acompanhar o CDI pode te ajudar a tomar decisões mais inteligentes sobre o seu dinheiro.</p>
+        </div>
+        <div class="form-section">
+            <h2>Calculadora CDB</h2>
+            <label for="valorInicial">Valor Inicial (R$):</label>
+            <input type="text" id="valorInicial" placeholder="Digite o valor inicial" oninput="formatarMoeda(this)">
+            <label for="tempo">Tempo:</label>
+            <input type="number" id="tempo" placeholder="Digite o tempo">
+            <select id="periodoTipo">
+                <option value="meses">meses</option>
+                <option value="anos">anos</option>
+            </select>
+            <label for="porcentagemCDI">Porcentagem do CDI (%):</label>
+            <input type="number" id="porcentagemCDI" placeholder="Digite a porcentagem do CDI">
+            <label for="aporteMensal">Aporte Mensal (R$):</label>
+            <input type="text" id="aporteMensal" placeholder="Digite o valor do aporte mensal" oninput="formatarMoeda(this)">
+            <button onclick="calcular()">Calcular</button>
+            <div id="resultado" class="result">
+                Valor final do investimento: R$0,00<br><br>
+                Valor final sem investimento: R$0,00
+            </div>
+            <div class="note">*Cálculo feito descontando o IR*</div>
+            <div class="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+        <div class="info-section">
+            <h2>Qual é o investimento mais seguro?</h2>
+            <p>O CDB é um dos investimentos mais seguros oferecido por bancos, garantido pelo FGC até R$ 250.000 por CPF. Ele funciona como um empréstimo ao banco, que paga juros ao investidor. Existem opções com juros fixos ou variáveis, ligados ao CDI, proporcionando previsibilidade nos ganhos. É uma escolha estável para quem busca segurança e retorno financeiro.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
